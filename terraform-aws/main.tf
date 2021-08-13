@@ -59,8 +59,6 @@ resource "aws_instance" "web" {
               echo "Hello, World" > index.html
               nohup busybox httpd -f -p 8080 &
               EOF
-
-  force_destroy = true
 }
 
 resource "aws_security_group" "web-sg" {
