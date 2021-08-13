@@ -14,17 +14,16 @@ terraform {
     }
   }
 
+  backend "remote" {
+    organization = "opeyemi19"
+
+    workspaces {
+      name = "gh-actions-demo"
+    }
+  }
+
   required_version = "~> 1.0"
 }
-
-backend "remote" {
-  organization = "opeyemi19"
-
-  workspaces {
-    name = "gh-actions-demo"
-  }
-}
-
 
 provider "aws" {
   region = "us-east-1"
